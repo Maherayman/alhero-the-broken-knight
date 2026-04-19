@@ -16,6 +16,8 @@
             text-align: center;
             margin: 20px 0;
             padding: 10px;
+            position: relative;
+            z-index: 2;
         }
         .lang-selector button {
             margin: 0 10px;
@@ -26,12 +28,21 @@
             color: #fff;
             cursor: pointer;
             transition: background 0.3s;
+            font-size: 1rem;
+            -webkit-user-select: none;
+            user-select: none;
+            -webkit-tap-highlight-color: transparent;
         }
         .lang-selector button.active {
             background: rgba(255, 255, 255, 0.3);
         }
+        .lang-selector button:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
         .lang-en, .lang-ar {
             display: none;
+            position: relative;
+            z-index: 1;
         }
         .lang-en.active, .lang-ar.active {
             display: block;
