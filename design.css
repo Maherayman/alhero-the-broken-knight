@@ -10,7 +10,8 @@ body {
     min-height: 100vh;
     font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
     color: #f4f4f4;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)), url('imgaes/dr5.jpg');
+    background-color: #081226;
+    background-image: url("./imgaes/dr5.jpg");
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
