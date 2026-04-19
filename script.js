@@ -105,3 +105,21 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 });
+                
+            
+        ;
+ {
+        threshold: 0.35
+    };
+
+    fadeTargets.forEach(node => observer.observe(node));
+
+    const headings = activeLangContainer.querySelectorAll('h2');
+    headings.forEach((heading) => {
+        heading.addEventListener('click', function() {
+            headings.forEach(h => h.classList.remove('highlighted'));
+            this.classList.add('highlighted');
+        });
+    });
+
+;
