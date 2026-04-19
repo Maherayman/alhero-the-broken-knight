@@ -10,12 +10,8 @@ body {
     min-height: 100vh;
     font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
     color: #f4f4f4;
-    background-color: #081226;
-    background-image: url("./imgaes/dr5.jpg");
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-position: center center;
+    background: #081226 url("imgaes/dr5.jpg") center/cover no-repeat fixed;
+    background-blend-mode: normal;
     position: relative;
     overflow-x: hidden;
 }
