@@ -133,6 +133,10 @@ body {
     color: #fff;
     transform: translateX(4px);
 }
+.rtl .story-toc a:hover,
+.rtl .story-toc a.active {
+    transform: translateX(-4px);
+}
 .story-content {
     display: grid;
     gap: 28px;
@@ -277,6 +281,15 @@ h2:hover {
         bottom: 12px;
         padding: 10px 16px;
         font-size: 0.9rem;
+    }
+}
+.rtl .top-btn {
+    right: auto;
+    left: 24px;
+}
+@media (max-width: 768px) {
+    .rtl .top-btn {
+        left: 12px;
     }
 }
 .top-btn.visible {
