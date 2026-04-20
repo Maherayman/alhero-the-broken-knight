@@ -15,8 +15,33 @@ document.addEventListener('DOMContentLoaded', function() {
         topButton.classList.toggle('visible', window.scrollY > 200);
     });
 
+    // Language switching
+    const langEnBtn = document.getElementById('lang-en');
+    const langArBtn = document.getElementById('lang-ar');
+    const langEnDiv = document.querySelector('.lang-en');
+    const langArDiv = document.querySelector('.lang-ar');
+
+    function switchLanguage(lang) {
+        if (lang === 'en') {
+            langEnDiv.classList.add('active');
+            langArDiv.classList.remove('active');
+            langEnBtn.classList.add('active');
+            langArBtn.classList.remove('active');
+            topButton.textContent = 'Back to Top';
+        } else if (lang === 'ar') {
+            langArDiv.classList.add('active');
+            langEnDiv.classList.remove('active');
+            langArBtn.classList.add('active');
+            langEnBtn.classList.remove('active');
+            topButton.textContent = 'العودة إلى الأعلى';
+        }
+    }
+
+    langEnBtn.addEventListener('click', () => switchLanguage('en'));
+    langArBtn.addEventListener('click', () => switchLanguage('ar'));
+
     function highlightNames(root) {
-        const regex = /\b(?:Aya|AYA|aya|Alhero|ALHERO|alhero)\b/g;
+        const regex = /\b(?:Aya|AYA|aya|Alhero|ALHERO|alhero|ألهيرو|اية|أية)\b/g;
         const walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT, {
             acceptNode(node) {
                 if (!node.nodeValue.trim()) return NodeFilter.FILTER_REJECT;
@@ -40,7 +65,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     frag.appendChild(document.createTextNode(text.slice(lastIndex, offset)));
                 }
                 const span = document.createElement('span');
-                span.className = match.toLowerCase().includes('aya') ? 'highlight-aya' : 'highlight-alhero';
+                span.className = match.toLowerCase().includes('aya') || match.includes('اية') || match.includes('أية') ? 'highlight-aya' : 'highlight-alhero';
                 span.textContent = match;
                 frag.appendChild(span);
                 lastIndex = offset + match.length;
@@ -56,13 +81,28 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    highlightNames(wrapper);
+    highlightNames(langEnDiv);
+    highlightNames(langArDiv);
 
-    const pageNote = document.querySelector('.page-note');
-    const storyToc = document.querySelector('.story-toc');
-    const chapterSections = document.querySelectorAll('.chapter');
-    const progressBanner = document.querySelector('.progress-banner');
-    const tocLinks = document.querySelectorAll('.story-toc a');
+    function getActiveLangContainer() {
+        return langEnDiv.classList.contains('active') ? langEnDiv : langArDiv;
+    }
+
+    function getProgressBanner() {
+        const activeContainer = getActiveLangContainer();
+        return activeContainer.querySelector('.progress-banner');
+    }
+
+    function getTocLinks() {
+        const activeContainer = getActiveLangContainer();
+        return activeContainer.querySelectorAll('.story-toc a');
+    }
+
+    const pageNote = getActiveLangContainer().querySelector('.page-note');
+    const storyToc = getActiveLangContainer().querySelector('.story-toc');
+    const chapterSections = getActiveLangContainer().querySelectorAll('.chapter');
+    const progressBanner = getProgressBanner();
+    const tocLinks = getTocLinks();
 
     const fadeTargets = [pageNote, storyToc, ...chapterSections];
     fadeTargets.forEach(node => node && node.classList.add('fade-in'));
@@ -84,8 +124,13 @@ document.addEventListener('DOMContentLoaded', function() {
 
                 if (entry.target.classList.contains('chapter')) {
                     const title = entry.target.querySelector('h2').textContent;
-                    progressBanner.textContent = 'Now reading: ' + title;
-                    tocLinks.forEach(link => {
+                    const banner = getProgressBanner();
+                    if (banner) {
+                        const isArabic = getActiveLangContainer() === langArDiv;
+                        banner.textContent = isArabic ? 'تقرأ الآن: ' + title : 'Now reading: ' + title;
+                    }
+                    const links = getTocLinks();
+                    links.forEach(link => {
                         link.classList.toggle('active', link.hash === '#' + entry.target.id);
                     });
                 }
@@ -97,29 +142,50 @@ document.addEventListener('DOMContentLoaded', function() {
 
     fadeTargets.forEach(node => node && observer.observe(node));
 
-    const headings = document.querySelectorAll('.page-wrapper h2');
+    const headings = getActiveLangContainer().querySelectorAll('h2');
     headings.forEach((heading) => {
         heading.addEventListener('click', function() {
             headings.forEach(h => h.classList.remove('highlighted'));
             this.classList.add('highlighted');
         });
+    });
+
+    // Reinitialize on language switch
+    langEnBtn.addEventListener('click', () => {
+        setTimeout(() => {
+            const newPageNote = getActiveLangContainer().querySelector('.page-note');
+            const newStoryToc = getActiveLangContainer().querySelector('.story-toc');
+            const newChapterSections = getActiveLangContainer().querySelectorAll('.chapter');
+            const newFadeTargets = [newPageNote, newStoryToc, ...newChapterSections];
+            newFadeTargets.forEach(node => node && node.classList.add('fade-in'));
+            newFadeTargets.forEach(node => node && observer.observe(node));
+
+            const newHeadings = getActiveLangContainer().querySelectorAll('h2');
+            newHeadings.forEach((heading) => {
+                heading.addEventListener('click', function() {
+                    newHeadings.forEach(h => h.classList.remove('highlighted'));
+                    this.classList.add('highlighted');
+                });
+            });
+        }, 100);
+    });
+
+    langArBtn.addEventListener('click', () => {
+        setTimeout(() => {
+            const newPageNote = getActiveLangContainer().querySelector('.page-note');
+            const newStoryToc = getActiveLangContainer().querySelector('.story-toc');
+            const newChapterSections = getActiveLangContainer().querySelectorAll('.chapter');
+            const newFadeTargets = [newPageNote, newStoryToc, ...newChapterSections];
+            newFadeTargets.forEach(node => node && node.classList.add('fade-in'));
+            newFadeTargets.forEach(node => node && observer.observe(node));
+
+            const newHeadings = getActiveLangContainer().querySelectorAll('h2');
+            newHeadings.forEach((heading) => {
+                heading.addEventListener('click', function() {
+                    newHeadings.forEach(h => h.classList.remove('highlighted'));
+                    this.classList.add('highlighted');
+                });
+            });
+        }, 100);
     });
 });
-                
-            
-        ;
- {
-        threshold: 0.35
-    };
-
-    fadeTargets.forEach(node => observer.observe(node));
-
-    const headings = activeLangContainer.querySelectorAll('h2');
-    headings.forEach((heading) => {
-        heading.addEventListener('click', function() {
-            headings.forEach(h => h.classList.remove('highlighted'));
-            this.classList.add('highlighted');
-        });
-    });
-
-;
