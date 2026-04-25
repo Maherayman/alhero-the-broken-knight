@@ -1,743 +1,576 @@
 <!doctype html>
 <html lang="en">
-  <head>
+
+<head>
     <meta name="description" content="Alhero - Your Ultimate Hero Companion" />
     <meta name="keywords" content="Alhero, hero, companion" />
     <meta charset="UTF-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1.0, viewport-fit=cover"
-    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
     <meta name="theme-color" content="#081226" />
     <meta name="mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
-    <meta
-      name="apple-mobile-web-app-status-bar-style"
-      content="black-translucent"
-    />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
     <title>Alhero</title>
-    <link rel="stylesheet" href="design.css" />
-    <style>
-      .lang-selector {
-        text-align: center;
-        margin: 20px 0;
-        padding: 10px;
-        position: relative;
-        z-index: 2;
-      }
-      .lang-selector button {
-        margin: 0 10px;
-        padding: 8px 16px;
-        border: none;
-        border-radius: 5px;
-        background: rgba(255, 255, 255, 0.1);
-        color: #fff;
-        cursor: pointer;
-        transition: background 0.3s;
-        font-size: 1rem;
-        -webkit-user-select: none;
-        user-select: none;
-        -webkit-tap-highlight-color: transparent;
-      }
-      .lang-selector button.active {
-        background: rgba(255, 255, 255, 0.3);
-      }
-      .lang-selector button:hover {
-        background: rgba(255, 255, 255, 0.2);
-      }
-      .lang-en,
-      .lang-ar {
-        display: none;
-        position: relative;
-        z-index: 1;
-      }
-      .lang-en.active,
-      .lang-ar.active {
-        display: block;
-      }
-      .rtl {
-        direction: rtl;
-      }
 
-      @media (max-width: 768px) {
+    <link rel="stylesheet" href="design.css" />
+
+    <style>
         .lang-selector {
-          margin: 12px 0;
-          padding: 8px;
+            text-align: center;
+            margin: 20px 0;
+            padding: 10px;
+            position: relative;
+            z-index: 2;
         }
+        
         .lang-selector button {
-          margin: 4px 6px;
-          padding: 6px 12px;
-          font-size: 0.9rem;
+            margin: 0 10px;
+            padding: 8px 16px;
+            border: none;
+            border-radius: 5px;
+            background: rgba(255, 255, 255, 0.1);
+            color: #fff;
+            cursor: pointer;
+            transition: background 0.3s;
+            font-size: 1rem;
+            -webkit-user-select: none;
+            user-select: none;
+            -webkit-tap-highlight-color: transparent;
         }
-      }
+        
+        .lang-selector button.active {
+            background: rgba(255, 255, 255, 0.3);
+        }
+        
+        .lang-selector button:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+        
+        .lang-en,
+        .lang-ar {
+            display: none;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .lang-en.active,
+        .lang-ar.active {
+            display: block;
+        }
+        
+        .rtl {
+            direction: rtl;
+        }
     </style>
-  </head>
-  <body>
+</head>
+
+<body>
     <div class="lang-selector">
-      <button id="lang-en" class="active">English</button>
-      <button id="lang-ar">العربية</button>
+        <button id="lang-en" class="active">English</button>
+        <button id="lang-ar">العربية</button>
     </div>
 
     <div class="lang-en active">
-      <div class="page-wrapper">
-        <h1 class="m_title">
-          Alhero <span class="title-mark">The Broken Knight</span>
-        </h1>
-        <p class="subtitle">
-          A broken knight's journey from quiet village life to the heart of the
-          royal court.
-        </p>
+        <div class="page-wrapper">
 
-        <main class="story-top">
-          <nav class="story-toc" role="navigation" aria-label="Story chapters">
-            <h3>Story Chapters</h3>
-            <ul>
-              <li><a href="#chapter-1">Chapter 1: Beginning of a Kid</a></li>
-              <li><a href="#chapter-2">Chapter 2: The Kid Is Growing</a></li>
-              <li><a href="#chapter-3">Chapter 3: The Teens</a></li>
-              <li>
-                <a href="#chapter-4">Chapter 4: Journey of a New Knight</a>
-              </li>
-              <li><a href="#chapter-5">Chapter 5: A New Look</a></li>
-              <li><a href="#chapter-6">Chapter 6: First Mission</a></li>
-              <li><a href="#chapter-7">Chapter 7: Aya's Smile</a></li>
-              <li>
-                <a href="#chapter-8">Chapter 8: Alhero Talks to Himself</a>
-              </li>
-            </ul>
-          </nav>
+            <h1 class="m_title">
+                Alhero <span class="title-mark">The Broken Knight</span>
+            </h1>
 
-          <div class="story-content">
-            <div class="page-note">
-              Turn the page and follow Alhero through every chapter of his
-              quest, from humble beginnings to the royal court.
-            </div>
-            <div class="progress-banner" aria-live="polite">
-              Now reading: Chapter 1 Beginning of a Kid
-            </div>
+            <p class="subtitle">
+                A broken knight's journey from a quiet village life to the heart of the royal court.
+            </p>
 
-            <section class="chapter" id="chapter-1">
-              <h2>
-                <span class="chapter-number">Chapter 1</span> Beginning of a Kid
-              </h2>
-              <p>
-                Alhero was a boy from the 1900s in a quiet village it was
-                callled baldons.
-              </p>
-              <p>
-                His mother died after giving birth, and he grew up with only his
-                father and a restless heart.
-              </p>
-              <p>
-                He was clever and alone, studying in local school he made only
-                one friend that called memo
-              </p>
-              <p>
-                he became his best friend and he couldn't do enything with out
-                him after that
-              </p>
-              <p>
-                then once a day in one of his lessons his eye got distracted on
-                the new student that came to the school that day and her name
-                was aya
-              </p>
-              <p>
-                she was the daughter of the king that mean she is a royal member
-              </p>
-              <p>
-                after a month he didn't like the education so he escaped the
-                school and never come back to it
-              </p>
-              <p>
-                Then he wished for two things the first is to be a knight and
-                second is to be closer to Aya.
-              </p>
-              <p>
-                he said that to memo and he supported him and joined his journey
-                to become a knight too
-              </p>
-            </section>
-            <hr />
+            <main class="story-top">
 
-            <section class="chapter" id="chapter-2">
-              <h2>
-                <span class="chapter-number">Chapter 2</span> The Kid Is Growing
-              </h2>
-              <p>
-                At 15, Alhero felt the pull of destiny. He wanted to be close to
-                Aya
-              </p>
-              <p>
-                alhero felt diffrent about aya.he felt like she is the love of
-                his life
-              </p>
-              <p>he make the a conversation with memo and the result</p>
-              <p>
-                He will train hard everyday, and he build discipline from his
-                father's lessons, and pushed himself every day to become
-                stronger in body and mind.
-              </p>
-              <p>and memo trained to become a great warior knight</p>
-              <p>alhero and memo have the plans to become knights</p>
-            </section>
-            <hr />
+                <nav class="story-toc">
+                    <h3>Story Chapters</h3>
+                    <ul>
+                        <li><a href="#chapter-1">Chapter 1: Beginning of a Kid</a></li>
+                        <li><a href="#chapter-2">Chapter 2: The Kid Is Growing</a></li>
+                        <li><a href="#chapter-3">Chapter 3: The Teens</a></li>
+                        <li><a href="#chapter-4">Chapter 4: Journey of a New Knight</a></li>
+                        <li><a href="#chapter-5">Chapter 5: A New Look</a></li>
+                        <li><a href="#chapter-6">Chapter 6: First Mission</a></li>
+                        <li><a href="#chapter-7">Chapter 7: Aya's Smile</a></li>
+                        <li><a href="#chapter-8">Chapter 8: Alhero Talks to Himself</a></li>
+                    </ul>
+                </nav>
 
-            <section class="chapter" id="chapter-3">
-              <h2><span class="chapter-number">Chapter 3</span> The Teens</h2>
-              <p>By 22, his body had changed, and so had his resolve.</p>
-              <p>
-                Alhero had been training for years, waiting for the day he could
-                join the royal knights.
-              </p>
-              <p>
-                and with orders from the king he said before the events by month
-              </p>
-              <p>he realised that the minimum age was 25,</p>
-              <p>
-                he doesn't knew that a surprise was waiting for him, one that
-                would change the course of his life.
-              </p>
-            </section>
-            <hr />
+                <div class="story-content">
 
-            <section class="chapter" id="chapter-4">
-              <h2>
-                <span class="chapter-number">Chapter 4</span> Journey of a New
-                Knights
-              </h2>
-              <p>
-                At 25, alhero and memo arrived at the castle and felt its
-                grandeur close in around him. and For the first time in years,
-                he saw Aya again.
-              </p>
-              <p>
-                She was still perfect in his eyes that haunted his thoughts.
-              </p>
-              <ul class="list">
-                <li>Shiny black eyes</li>
-                <li>Long black hair</li>
-                <li>Soft laugh</li>
-                <li>small body</li>
-                <li>bright skin</li>
-              </ul>
-              <p>
-                after he take a final look at aya from far he makes it to the
-                test field
-              </p>
-              <p>there was 3 tests for him to be a knight</p>
-              <ul class="list">
-                <li>Strength test</li>
-                <li>Agility test</li>
-                <li>Aiming test</li>
-              </ul>
-              <p>
-                the Strength test was easy for him because the training he was
-                doing
-              </p>
-              <p>the agility test alhero was like a feather in the air</p>
-              <p>the aiming test was shoting the arrows into a some targets</p>
-              <p>alhero he passed all the tests and became a knight</p>
-              <p>
-                but not a royal one. Alhero became a guard knight, protecting
-                the baldons from outside.
-              </p>
-              <p>
-                his bestfriend has become a warior knight because his physique
-                and height so he made it to his dream
-              </p>
-              <p>
-                but he didn't abandon alhero and he still supported him and
-                beside him all the time
-              </p>
-            </section>
-            <hr />
-            <section class="chapter" id="chapter-5">
-              <h2><span class="chapter-number">Chapter 5</span> A New Look</h2>
-              <p>A few days after the test, he obtained his new armor.</p>
-              <ul class="list">
-                <li>Gray suit</li>
-                <li>Black helmet</li>
-                <li>Red cape</li>
-                <li>Name tag: Alhero</li>
-              </ul>
-              <p>He felt like a new person in his armor.</p>
-              <p>
-                He wished that everything he was doing would get him closer to
-                Aya and his dreams.
-              </p>
-            </section>
-            <hr />
+                    <div class="page-note">
+                        Turn the page and follow Alhero through every chapter of his quest, from humble beginnings to the royal court.
+                    </div>
 
-            <section class="chapter" id="chapter-6">
-              <h2>
-                <span class="chapter-number">Chapter 6</span> First Mission
-              </h2>
-              <p>
-                After obtaining his new armor, he trained for a month to prepare
-                himself for his first mission. After that, he was assigned to
-                his first mission in the journey.
-              </p>
-              <p>
-                His first mission was to protect baldons from bandit attacks.
-                There were small troops, so the kingdom sent a few knights to
-                defeat them.
-              </p>
-              <p>
-                alhero didn't want to go without his bestfriend memo and he
-                agreed to his request
-              </p>
-              <p>
-                The mission was medium in difficulty as the operatior said so
-                the team would face a small challenge.
-              </p>
-              <p>
-                in the evening they arrived to the location and they were
-                surpriesd from the amount they will fight
-              </p>
-              <p>they know that there is no escape from this mission</p>
-              <p>
-                so the team with alhero and memo begin the fight and it was very
-                difficult
-              </p>
-              <p>
-                alhero fighting the bandits on the right and memo on the left
-                and the rest of the team was behind them fighting
-              </p>
-              <p>
-                there was a lot of bodys on the ground in the swords was full of
-                blood
-              </p>
-              <p>
-                but two o the team went down and there was a three fully armored
-                bandits against them
-              </p>
-              <p>alhero fought the first one and he defeted him easly</p>
-              <p>
-                and memo was fighting one of them until there was the remaing
-                one he was behind memo and will strike him
-              </p>
-              <p>
-                alhero noticed that and throw a arrow at bandit that was behind
-                memo
-              </p>
-              <p>
-                he maked the bandit see him to save memo then he defeted him and
-                memo defeted the one he was fighting
-              </p>
-              <p>
-                this was a victory for baldons but sad for the families of the
-                fallen knights
-              </p>
-              <p>
-                after the mission they returned home and alhero was very tired
-              </p>
-              <p>
-                and the next day he and his friend recived a promotion from the
-                king
-              </p>
-              <p>alhero is now a step closer to Aya, the love of his life.</p>
-            </section>
-            <hr />
-            <section class="chapter" id="chapter-7">
-              <h2><span class="chapter-number">Chapter 7</span> Aya's Smile</h2>
-              <p>
-                After the promotion Alhero heard there was a party that the king
-                invited him to.
-              </p>
-              <p>
-                He was happy to be there because he would see Aya again and
-                could talk to her.
-              </p>
-              <p>
-                The day of the party arrived. There were a lot of people there,
-                but Alhero was looking for Aya.
-              </p>
-              <p>After a while, he found her. He was too shy to talk to her.</p>
-              <p>
-                After many years of waiting, he was closer to her than ever
-                before.
-              </p>
-              <p>
-                Alhero had a battle with his mind and heart. His feelings were
-                his heart's power, and his thoughts were his mind's power.
-              </p>
-              <p>
-                After a long struggle, he was a coward; he couldn't talk to her
-                and felt like a dead body.
-              </p>
-              <p>
-                At the end of the party, he saw Aya for the last time in the
-                crowd.
-              </p>
-              <p>
-                Aya and Alhero made eye contact, then Aya made a beautiful smile
-                that made Alhero feel alive again.
-              </p>
-            </section>
-            <hr />
-            <section class="chapter" id="chapter-8">
-              <h2>
-                <span class="chapter-number">Chapter 8</span> Alhero Talks to
-                Himself
-              </h2>
-              <p>
-                After the party, Alhero returned home and went to his bed to
-                rest, but instead of sleeping, he talked to himself.
-              </p>
-              <p>
-                He was an overthinker, so his thoughts were louder than his
-                voice.
-              </p>
-              <p>
-                Alhero talked and blamed himself for what he did at the party.
-              </p>
-              <p>He thought he should have been braver and talked to Aya.</p>
-              <p>
-                But he had a little bit of hope. Although Alhero didn't talk to
-                her, Aya smiled at him at the end of the party.
-              </p>
-              <p>
-                So Alhero encouraged himself and promised that the next time he
-                sees <span class="highlight-aya">Aya</span>, he will talk to
-                her.
-              </p>
-              <p>
-                After this conversation, Alhero felt a bit better and went to
-                sleep.
-              </p>
-            </section>
-          </div>
-        </main>
-      </div>
+                    <div class="progress-banner">
+                        Now Reading: Chapter 1 - Beginning of a Kid
+                    </div>
+
+                    <!-- CHAPTER 1 -->
+                    <section class="chapter" id="chapter-1">
+                        <h2><span class="chapter-number">Chapter 1</span> Beginning of a Kid</h2>
+
+                        <p>Alhero was a boy from the 1900s in a quiet village called Baldons.</p>
+                        <p>His mother died after giving birth, and he grew up with only his father and a restless heart.</p>
+
+                        <p>He was clever but lonely. While studying at the local school, he made only one friend named Memo.</p>
+                        <p>Memo became his best friend, and after that, Alhero could not do anything without him.</p>
+
+                        <p>One day during class, his attention was caught by a new student. Her name was Aya.</p>
+                        <p>She was the daughter of the king, which meant she was a member of the royal family.</p>
+
+                        <p>After a month, Alhero lost interest in school, so he escaped and never returned.</p>
+                        <p>He made two wishes: to become a knight and to get closer to Aya.</p>
+
+                        <p>He told Memo about his dream, and Memo supported him and joined his journey to become a knight as well.</p>
+                        <p>But neither of them knew how dangerous that dream would become.</p>
+                    </section>
+
+                    <hr />
+
+                    <!-- CHAPTER 2 -->
+                    <section class="chapter" id="chapter-2">
+                        <h2><span class="chapter-number">Chapter 2</span> The Kid Is Growing</h2>
+
+                        <p>At 15, Alhero felt the pull of destiny. He wanted to be close to Aya.</p>
+                        <p>He felt something different about her, as if she were the love of his life.</p>
+                        <p>He had a conversation with Memo, and they made a decision.</p>
+                        <p>Alhero would train hard every day, building discipline from his father's lessons and pushing himself to become stronger in both body and mind.</p>
+                        <p>Memo also trained to become a great warrior knight.</p>
+                        <p>Together, they made a plan to become knights.</p>
+                        <p>And from that day on, their journey began to shape their fate.</p>
+                    </section>
+
+                    <hr />
+
+                    <!-- CHAPTER 3 -->
+                    <section class="chapter" id="chapter-3">
+                        <h2><span class="chapter-number">Chapter 3</span> The Teens</h2>
+
+                        <p>By the age of 22, his body had changed, and so had his determination.</p>
+                        <p>Alhero had been training for years, waiting for the day he could join the royal knights.</p>
+                        <p>A month before the events, the king had announced something important.</p>
+                        <p>Alhero realized that the minimum age to become a knight was 25.</p>
+                        <p>But what he didn't know was that destiny was already moving in silence.</p>
+                    </section>
+                    <hr />
+
+                    <!-- CHAPTER 4 -->
+                    <section class="chapter" id="chapter-4">
+                        <h2>
+                            <span class="chapter-number">Chapter 4</span> Journey of a New Knight
+                        </h2>
+
+                        <p>At the age of 25, Alhero and Memo arrived at the castle and felt its عظيمة presence surround them.</p>
+                        <p>For the first time in years, Alhero saw Aya again.</p>
+                        <p>In his eyes, she was still perfect, and her image had never left his thoughts.</p>
+
+                        <ul class="list">
+                            <li>Shiny black eyes</li>
+                            <li>Long black hair</li>
+                            <li>Soft laugh</li>
+                            <li>Small figure</li>
+                            <li>Bright skin</li>
+                        </ul>
+
+                        <p>After taking one last look at Aya from afar, he made his way to the testing field.</p>
+                        <p>There were three tests required to become a knight:</p>
+
+                        <ul class="list">
+                            <li>Strength test</li>
+                            <li>Agility test</li>
+                            <li>Aiming test</li>
+                        </ul>
+
+                        <p>The strength test was easy for him because of his years of training.</p>
+                        <p>In the agility test, Alhero moved like a feather in the air.</p>
+                        <p>The aiming test required shooting arrows at targets.</p>
+                        <p>Alhero passed all the tests and became a knight.</p>
+
+                        <p>However, he did not become a royal knight. Instead, he became a guard knight, protecting Baldons from the outside.</p>
+                        <p>His best friend, Memo, became a warrior knight due to his physique and strength, achieving his dream.</p>
+
+                        <p>Even so, Memo never abandoned Alhero and continued to support him, always standing by his side.</p>
+                        <p>But fate had something waiting for them inside the castle walls.</p>
+                    </section>
+
+                    <hr />
+
+                    <!-- CHAPTER 5 -->
+                    <section class="chapter" id="chapter-5">
+                        <h2>
+                            <span class="chapter-number">Chapter 5</span> A New Look
+                        </h2>
+
+                        <p>A few days after the test, Alhero received his new armor.</p>
+
+                        <ul class="list">
+                            <li>Gray suit</li>
+                            <li>Black helmet</li>
+                            <li>Red cape</li>
+                            <li>Name tag: Alhero</li>
+                        </ul>
+
+                        <p>Wearing the armor made him feel like a completely new person.</p>
+                        <p>He hoped that everything he was doing would bring him closer to Aya and his dreams.</p>
+                        <p>And for the first time, Alhero felt like he was truly becoming someone else.</p>
+                    </section>
+
+                    <hr />
+
+                    <!-- CHAPTER 6 -->
+                    <section class="chapter" id="chapter-6">
+                        <h2>
+                            <span class="chapter-number">Chapter 6</span>
+                        </h2>
+                        <p>After receiving his new armor, Alhero trained for a month to prepare for his first mission.</p>
+                        <p>Soon after, he was assigned to his first task.</p>
+
+                        <p>The mission was to protect Baldons from bandit attacks.</p>
+                        <p>The kingdom believed the threat was small, so only a limited number of knights were sent.</p>
+
+                        <p>Alhero did not want to go without his best friend, Memo, and his request to have him join was accepted.</p>
+                        <p>The mission was considered moderate in difficulty, so the team expected only a small challenge.</p>
+
+                        <p>However, when they arrived in the evening, they were shocked by the number of enemies.</p>
+                        <p>They quickly realized there was no escape from this battle.</p>
+
+                        <p>The fight began, and it was extremely difficult.</p>
+                        <p>Alhero fought on the right side, while Memo fought on the left. The rest of the team supported them from behind.</p>
+
+                        <p>The battlefield was soon filled with bodies, and the knights' swords were covered in blood.</p>
+                        <p>Two members of their team fell, leaving them facing three fully armored bandits.</p>
+
+                        <p>Alhero fought one of them and defeated him with ease.</p>
+                        <p>Meanwhile, Memo was engaged in combat with another.</p>
+
+                        <p>The third bandit attempted to attack Memo from behind.</p>
+                        <p>Alhero noticed just in time and shot an arrow at the enemy.</p>
+
+                        <p>He drew the bandit's attention away, saving Memo, and then defeated him.</p>
+                        <p>At the same time, Memo defeated the opponent he was fighting.</p>
+
+                        <p>The battle ended in victory for Baldons, but it was a sorrowful one for the families of the fallen knights.</p>
+
+                        <p>After the mission, they returned home, and Alhero was completely exhausted.</p>
+                        <p>The next day, both he and Memo received a promotion from the king.</p>
+
+                        <p>Alhero was now one step closer to Aya—the love of his life.</p>
+                        <p>But this victory was only the beginning of something far greater.</p>
+                    </section>
+                    <hr />
+                    <!-- CHAPTER 7 -->
+                    <section class="chapter" id="chapter-7">
+                        <h2>
+                            <span class="chapter-number">Chapter 7</span> Aya's Smile
+                        </h2>
+
+                        <p>After the promotion, Alhero heard that the king had invited him to a grand party.</p>
+                        <p>He was excited because he would see Aya again and might finally talk to her.</p>
+
+                        <p>The day of the party arrived. The place was filled with people, but Alhero was searching only for Aya.</p>
+                        <p>After a while, he found her but he was too shy to approach her.</p>
+
+                        <p>After many years of waiting, he was closer to her than ever before.</p>
+                        <p>A battle began inside him, between his heart and his mind.</p>
+
+                        <p>His heart pushed him forward with feelings, while his mind held him back with fear.</p>
+                        <p>In the end, fear won. He could not speak and felt frozen in place.</p>
+
+                        <p>As the party came to an end, he saw Aya one last time in the crowd.</p>
+                        <p>Their eyes met and she gave him a beautiful smile.</p>
+
+                        <p>That smile brought him back to life.</p>
+                        <p>And in that moment, everything inside Alhero changed forever.</p>
+                    </section>
+                    <hr />
+
+                    <!-- CHAPTER 8 -->
+                    <section class="chapter" id="chapter-8">
+                        <h2>
+                            <span class="chapter-number">Chapter 8</span> Alhero Talks to Himself
+                        </h2>
+
+                        <p>After the party, Alhero returned home and lay in his bed, but he could not sleep.</p>
+                        <p>Instead, he began talking to himself.</p>
+
+                        <p>He was an overthinker, and his thoughts were louder than his voice.</p>
+                        <p>He blamed himself for what had happened at the party.</p>
+
+                        <p>He believed he should have been braver and spoken to Aya.</p>
+
+                        <p>But deep inside, there was still a small spark of hope.</p>
+                        <p>Even though he did not speak to her, Aya had smiled at him.</p>
+
+                        <p>That moment gave him strength.</p>
+                        <p>After that, he finally felt calmer… and fell asleep.</p>
+
+                        <p>And he promised himself that the next time would be different.</p>
+                    </section>
+                </div>
+            </main>
+        </div>
     </div>
     <div class="lang-ar">
-      <div class="page-wrapper rtl">
-        <h1 class="m_title">
-          <span class="highlight-alhero">ألهيرو</span>
-          <span class="title-mark">الفارس المكسور</span>
-        </h1>
-        <p class="subtitle">
-          رحلة فارس مكسور من حياة قرية هادئة إلى قلب البلاط الملكي.
-        </p>
+        <div class="page-wrapper">
 
-        <main class="story-top">
-          <nav class="story-toc" role="navigation" aria-label="فصول القصة">
-            <h3>فصول القصة</h3>
-            <ul>
-              <li><a href="#chapter-1">الفصل 1: بداية طفل</a></li>
-              <li><a href="#chapter-2">الفصل 2: الطفل يكبر</a></li>
-              <li><a href="#chapter-3">الفصل 3: سنوات المراهقة</a></li>
-              <li><a href="#chapter-4">الفصل 4: رحلة فارس جديد</a></li>
-              <li><a href="#chapter-5">الفصل 5: مظهر جديد</a></li>
-              <li><a href="#chapter-6">الفصل 6: المهمة الأولى</a></li>
-              <li>
-                <a href="#chapter-7">الفصل 7:ابتسامة اية</a>
-              </li>
-              <li>
-                <a href="#chapter-8">الفصل 8:الهيرو يتحدث مع نفسه</a>
-              </li>
-            </ul>
-          </nav>
+            <h1 class="m_title">
+                <span class="highlight-alhero">ألهيرو</span>
+                <span class="title-mark">الفارس المكسور</span>
+            </h1>
 
-          <div class="story-content">
-            <div class="page-note">
-              اقلب الصفحة وتابع
-              <span class="highlight-alhero">ألهيرو</span> خلال كل فصل من رحلته،
-              من بدايات متواضعة إلى البلاط الملكي.
-            </div>
-            <div class="progress-banner" aria-live="polite">
-              تقرأ الآن: الفصل 1 بداية طفل
-            </div>
+            <p class="subtitle">
+                رحلة فارس مكسور من حياة قرية هادئة إلى قلب البلاط الملكي.
+            </p>
 
-            <section class="chapter" id="chapter-1">
-              <h2><span class="chapter-number">الفصل 1</span> بداية طفل</h2>
-              <p>
-                كان <span class="highlight-alhero">ألهيرو</span> صبيًا من القرن
-                العشرين في قرية هادئة تُدعى بالدونز.
-              </p>
-              <p>
-                توفيت والدته بعد ولادته، ونشأ مع والده فقط وقلبٍ لا يعرف السكون.
-              </p>
-              <p>
-                كان ذكيًا ووحيدًا، يدرس في المدرسة المحلية، ولم يكن لديه سوى
-                صديق واحد يُدعى <span class="highlight-memo">ميمو</span>.
-              </p>
-              <p>أصبح صديقه المفضل، ولم يكن يستطيع فعل أي شيء بدونه بعد ذلك.</p>
-              <p>
-                وفي أحد الأيام أثناء الدرس، لفتت انتباهه طالبة جديدة جاءت إلى
-                المدرسة في ذلك اليوم، وكان اسمها
-                <span class="highlight-aya">آية</span>.
-              </p>
-              <p>كانت ابنة الملك، وهذا يعني أنها من العائلة المالكة.</p>
-              <p>
-                بعد شهر، لم يعجبه التعليم فهرب من المدرسة ولم يعد إليها مرة
-                أخرى.
-              </p>
-              <p>
-                ثم تمنى شيئين: الأول أن يصبح فارسًا، والثاني أن يقترب من
-                <span class="highlight-aya">آية</span>.
-              </p>
-              <p>
-                أخبر <span class="highlight-memo">ميمو</span> بذلك، فدعمه وقرر
-                أن ينضم إليه في رحلته ليصبح فارسًا أيضًا.
-              </p>
-            </section>
-            <hr />
+            <main class="story-top">
 
-            <section class="chapter" id="chapter-2">
-              <h2><span class="chapter-number">الفصل 2</span> الطفل يكبر</h2>
-              <p>
-                في سن الخامسة عشرة، شعر
-                <span class="highlight-alhero">ألهيرو</span> بنداء القدر. أراد
-                أن يكون قريبًا من <span class="highlight-aya">آية</span>.
-              </p>
-              <p>
-                شعر <span class="highlight-alhero">ألهيرو</span> بشيء مختلف تجاه
-                <span class="highlight-aya">آية</span>، وكأنها حب حياته.
-              </p>
-              <p>
-                أجرى محادثة مع <span class="highlight-memo">ميمو</span>، وكانت
-                النتيجة:
-              </p>
-              <p>
-                سيتدرب بجد كل يوم، ويبني الانضباط من دروس والده، ويدفع نفسه
-                ليصبح أقوى جسدًا وعقلًا.
-              </p>
-              <p>
-                وكان <span class="highlight-memo">ميمو</span> يتدرب ليصبح فارسًا
-                محاربًا عظيمًا.
-              </p>
-              <p>
-                وضع <span class="highlight-alhero">ألهيرو</span> و<span
-                  class="highlight-memo"
-                  >ميمو</span
-                >
-                خطة ليصبحا فارسَين.
-              </p>
-            </section>
-            <hr />
+                <nav class="story-toc" aria-label="فصول القصة">
+                    <h3>فصول القصة</h3>
+                    <ul>
+                        <li><a href="#chapter-11">الفصل 1: بداية طفل</a></li>
+                        <li><a href="#chapter-12">الفصل 2: الطفل يكبر</a></li>
+                        <li><a href="#chapter-13">الفصل 3: سنوات المراهقة</a></li>
+                        <li><a href="#chapter-14">الفصل 4: رحلة فارس جديد</a></li>
+                        <li><a href="#chapter-15">الفصل 5: مظهر جديد</a></li>
+                        <li><a href="#chapter-16">الفصل 6: المهمة الأولى</a></li>
+                        <li><a href="#chapter-17">الفصل 7: ابتسامة آية</a></li>
+                        <li><a href="#chapter-18">الفصل 8: ألهيرو يتحدث مع نفسه</a></li>
+                    </ul>
+                </nav>
 
-            <section class="chapter" id="chapter-3">
-              <h2>
-                <span class="chapter-number">الفصل 3</span> سنوات المراهقة
-              </h2>
-              <p>بحلول سن الثانية والعشرين، تغير جسده وكذلك عزيمته.</p>
-              <p>
-                كان <span class="highlight-alhero">ألهيرو</span> يتدرب لسنوات،
-                منتظرًا اليوم الذي ينضم فيه إلى الفرسان الملكيين.
-              </p>
-              <p>وبأوامر من الملك قبل الأحداث بشهر،</p>
-              <p>اكتشف أن الحد الأدنى للعمر هو 25 عامًا،</p>
-              <p>ولم يكن يعلم أن مفاجأة كانت بانتظاره، ستغير مجرى حياته.</p>
-            </section>
-            <hr />
+                <div class="story-content">
 
-            <section class="chapter" id="chapter-4">
-              <h2>
-                <span class="chapter-number">الفصل 4</span> رحلة فارس جديد
-              </h2>
-              <p>
-                في سن الخامسة والعشرين، وصل
-                <span class="highlight-alhero">ألهيرو</span> و<span
-                  class="highlight-memo"
-                  >ميمو</span
-                >
-                إلى القلعة وشعرا بعظمتها تحيط بهما. ولأول مرة منذ سنوات، رأى
-                <span class="highlight-aya">آية</span> مجددًا.
-              </p>
-              <p>كانت لا تزال مثالية في عينيه، تسيطر على أفكاره.</p>
-              <ul class="list">
-                <li>عيون سوداء لامعة</li>
-                <li>شعر أسود طويل</li>
-                <li>ضحكة ناعمة</li>
-                <li>جسم صغير</li>
-                <li>بشرة مشرقة</li>
-              </ul>
-              <p>
-                بعد أن ألقى نظرة أخيرة عليها من بعيد، توجه إلى ساحة الاختبار.
-              </p>
-              <p>كانت هناك ثلاثة اختبارات ليصبح فارسًا:</p>
-              <ul class="list">
-                <li>اختبار القوة</li>
-                <li>اختبار الرشاقة</li>
-                <li>اختبار التصويب</li>
-              </ul>
-              <p>كان اختبار القوة سهلًا عليه بسبب تدريبه.</p>
-              <p>وفي اختبار الرشاقة، كان خفيفًا كريشة في الهواء.</p>
-              <p>أما اختبار التصويب فكان إطلاق السهام نحو الأهداف.</p>
-              <p>
-                نجح <span class="highlight-alhero">ألهيرو</span> في جميع
-                الاختبارات وأصبح فارسًا،
-              </p>
-              <p>
-                لكن ليس فارسًا ملكيًا. بل أصبح فارس حراسة، يحمي بالدونز من
-                الخارج.
-              </p>
-              <p>
-                أما صديقه فقد أصبح فارسًا محاربًا بسبب بنيته وقوته، وحقق حلمه.
-              </p>
-              <p>
-                لكنه لم يتخلَّ عن <span class="highlight-alhero">ألهيرو</span>،
-                وظل يدعمه ويقف بجانبه دائمًا.
-              </p>
-            </section>
-            <hr />
+                    <div class="page-note">
+                        اقلب الصفحة وتابع <span class="highlight-alhero">ألهيرو</span> خلال رحلته، من بدايات متواضعة إلى البلاط الملكي.
+                    </div>
 
-            <section class="chapter" id="chapter-5">
-              <h2><span class="chapter-number">الفصل 5</span> مظهر جديد</h2>
-              <p>بعد أيام قليلة من الاختبار، حصل على درعه الجديد.</p>
-              <ul class="list">
-                <li>بدلة رمادية</li>
-                <li>خوذة سوداء</li>
-                <li>عباءة حمراء</li>
-                <li>لوحة اسم: <span class="highlight-alhero">ألهيرو</span></li>
-              </ul>
-              <p>شعر وكأنه شخص جديد داخل درعه.</p>
-              <p>
-                وتمنى أن يقربه كل ما يفعله من
-                <span class="highlight-aya">آية</span> ومن أحلامه.
-              </p>
-            </section>
-            <hr />
+                    <div class="progress-banner">
+                        تقرأ الآن: الفصل 1 - بداية طفل
+                    </div>
 
-            <section class="chapter" id="chapter-6">
-              <h2><span class="chapter-number">الفصل 6</span> المهمة الأولى</h2>
-              <p>
-                بعد حصوله على درعه الجديد، تدرب لمدة شهر استعدادًا لمهمته
-                الأولى.
-              </p>
-              <p>كانت مهمته الأولى حماية بالدونز من هجمات قطاع الطرق.</p>
-              <p>
-                لم يرد <span class="highlight-alhero">ألهيرو</span> الذهاب بدون
-                صديقه <span class="highlight-memo">ميمو</span>، فوافق على طلبه.
-              </p>
-              <p>كانت المهمة متوسطة الصعوبة كما قال المسؤول.</p>
-              <p>وفي المساء، وصلوا إلى الموقع وتفاجأوا بعدد الأعداء.</p>
-              <p>أدركوا أنه لا يوجد مفر من هذه المهمة.</p>
-              <p>بدأ القتال، وكان صعبًا جدًا.</p>
-              <p>
-                كان <span class="highlight-alhero">ألهيرو</span> يقاتل على
-                اليمين و<span class="highlight-memo">ميمو</span> على اليسار،
-                بينما بقية الفريق خلفهم.
-              </p>
-              <p>كانت الأرض مليئة بالجثث والسيوف مغطاة بالدماء.</p>
-              <p>
-                سقط اثنان من الفريق، وبقي ثلاثة من قطاع الطرق المدرعين بالكامل.
-              </p>
-              <p>
-                قاتل <span class="highlight-alhero">ألهيرو</span> أحدهم وهزمه
-                بسهولة.
-              </p>
-              <p>
-                وكان <span class="highlight-memo">ميمو</span> يقاتل آخر، بينما
-                كان الثالث خلفه على وشك ضربه.
-              </p>
-              <p>
-                لاحظ <span class="highlight-alhero">ألهيرو</span> ذلك وأطلق
-                سهمًا نحو العدو خلف <span class="highlight-memo">ميمو</span>.
-              </p>
-              <p>
-                لفت انتباهه لينقذ صديقه، ثم هزمه، وتمكن
-                <span class="highlight-memo">ميمو</span> أيضًا من هزيمة خصمه.
-              </p>
-              <p>
-                كان هذا نصرًا لبالدونز، لكنه حزن لعائلات الفرسان الذين سقطوا.
-              </p>
-              <p>
-                عادوا بعد المهمة، وكان
-                <span class="highlight-alhero">ألهيرو</span> مرهقًا جدًا.
-              </p>
-              <p>وفي اليوم التالي، حصل هو وصديقه على ترقية من الملك.</p>
-              <p>
-                وأصبح <span class="highlight-alhero">ألهيرو</span> خطوة أقرب إلى
-                <span class="highlight-aya">آية</span>، حب حياته.
-              </p>
-            </section>
-            <hr />
+                    <!-- الفصل 1 -->
+                    <section class="chapter" id="chapter-11">
+                        <h2><span class="chapter-number">الفصل 1</span> بداية طفل</h2>
 
-            <section class="chapter" id="chapter-7">
-              <h2>
-                <span class="chapter-number">الفصل 7</span> ابتسامة
-                <span class="highlight-aya">آية</span>
-              </h2>
-              <p>
-                بعد الترقية، علم <span class="highlight-alhero">ألهيرو</span> أن
-                الملك دعاه إلى حفل.
-              </p>
-              <p>
-                كان سعيدًا لأنه سيرى <span class="highlight-aya">آية</span> مرة
-                أخرى.
-              </p>
-              <p>عندما وصل الحفل، كان مليئًا بالناس، لكنه كان يبحث عنها فقط.</p>
-              <p>بعد فترة، وجدها، لكنه كان خجولًا جدًا ليتحدث معها.</p>
-              <p>بعد سنوات من الانتظار، أصبح قريبًا منها أكثر من أي وقت مضى.</p>
-              <p>دخل في صراع بين قلبه وعقله.</p>
-              <p>وفي النهاية، لم يستطع التحدث وشعر وكأنه جسد بلا روح.</p>
-              <p>وفي نهاية الحفل، رآها مرة أخيرة.</p>
-              <p>تلاقت أعينهما، ثم ابتسمت له ابتسامة جميلة أعادت له الحياة.</p>
-            </section>
-            <hr />
+                        <p>كان <span class="highlight-alhero">ألهيرو</span> صبيًا من القرن العشرين يعيش في قرية هادئة تُدعى بالدونز.</p>
+                        <p>توفيت والدته بعد ولادته، فنشأ مع والده فقط وقلبٍ لا يعرف السكون.</p>
 
-            <section class="chapter" id="chapter-8">
-              <h2>
-                <span class="chapter-number">الفصل 8</span>
-                <span class="highlight-alhero">ألهيرو</span> يتحدث مع نفسه
-              </h2>
-              <p>بعد الحفل، عاد إلى منزله واستلقى على سريره، لكنه لم ينم.</p>
-              <p>بدأ يتحدث مع نفسه، فقد كان كثير التفكير.</p>
-              <p>لام نفسه على ما حدث في الحفل.</p>
-              <p>
-                تمنى لو كان أشجع وتحدث مع
-                <span class="highlight-aya">آية</span>.
-              </p>
-              <p>لكن بقي لديه أمل صغير، فقد ابتسمت له في النهاية.</p>
-              <p>ووعد نفسه أنه في المرة القادمة سيتحدث معها.</p>
-              <p>بعد ذلك، شعر بتحسن ونام.</p>
-            </section>
-          </div>
-        </main>
-      </div>
+                        <p>كان ذكيًا لكنه وحيد، وكان يدرس في المدرسة المحلية، ولم يكن لديه سوى صديق واحد يُدعى <span class="highlight-memo">ميمو</span>.</p>
+                        <p>أصبح <span class="highlight-memo">ميمو</span> صديقه المفضل، ولم يعد يستطيع فعل أي شيء بدونه.</p>
+
+                        <p>وفي أحد الأيام، أثناء الحصة، لفتت انتباهه طالبة جديدة جاءت في ذلك اليوم، وكان اسمها <span class="highlight-aya">آية</span>.</p>
+                        <p>كانت ابنة الملك، وهذا يعني أنها من العائلة المالكة.</p>
+
+                        <p>بعد شهر، لم يعجبه التعليم، فهرب من المدرسة ولم يعد إليها مرة أخرى.</p>
+                        <p>ثم تمنى شيئين: أن يصبح فارسًا، وأن يقترب من <span class="highlight-aya">آية</span>.</p>
+
+                        <p>أخبر <span class="highlight-memo">ميمو</span> بذلك، فدعمه وقرر أن ينضم إليه في رحلته ليصبح فارسًا أيضًا.</p>
+                        <p>لكن لم يكن أيٌّ منهما يعلم كم سيكون هذا الحلم خطيرًا في المستقبل.</p>
+                    </section>
+
+                    <hr />
+
+                    <!-- الفصل 2 -->
+                    <section class="chapter" id="chapter-12">
+                        <h2><span class="chapter-number">الفصل 2</span> الطفل يكبر</h2>
+
+                        <p>في سن الخامسة عشرة، شعر <span class="highlight-alhero">ألهيرو</span> بنداء القدر، وأراد أن يكون قريبًا من <span class="highlight-aya">آية</span>.</p>
+                        <p>شعر بشيء مختلف تجاهها، وكأنها حب حياته.</p>
+
+                        <p>أجرى محادثة مع <span class="highlight-memo">ميمو</span>، وكانت النتيجة:</p>
+                        <p>سيتدرب بجد كل يوم، ويبني الانضباط من دروس والده، ويدفع نفسه ليصبح أقوى جسدًا وعقلًا.</p>
+
+                        <p>وكان <span class="highlight-memo">ميمو</span> يتدرب ليصبح فارسًا محاربًا عظيمًا.</p>
+                        <p>وضع <span class="highlight-alhero">ألهيرو</span> و<span class="highlight-memo">ميمو</span> خطة ليصبحا فارسَين.</p>
+
+                        <p>ومنذ ذلك اليوم بدأت رحلتهما تُشكّل مصيرهما.</p>
+                    </section>
+
+                    <hr />
+
+                    <!-- الفصل 3 -->
+                    <section class="chapter" id="chapter-13">
+                        <h2><span class="chapter-number">الفصل 3</span> سنوات المراهقة</h2>
+
+                        <p>في سن الثانية والعشرين، تغير جسد <span class="highlight-alhero">ألهيرو</span>، وكذلك عزيمته.</p>
+                        <p>كان يتدرب لسنوات، منتظرًا اليوم الذي ينضم فيه إلى الفرسان الملكيين.</p>
+
+                        <p>وقبل الأحداث بشهر، أعلن الملك أمرًا مهمًا.</p>
+                        <p>اكتشف <span class="highlight-alhero">ألهيرو</span> أن الحد الأدنى للعمر هو 25 عامًا.</p>
+
+                        <p>لكن ما لم يكن يعرفه هو أن القدر كان يتحرك في صمت.</p>
+                    </section>
+
+                    <hr />
+
+                    <!-- الفصل 4 -->
+                    <section class="chapter" id="chapter-14">
+                        <h2><span class="chapter-number">الفصل 4</span> رحلة فارس جديد</h2>
+
+                        <p>في سن الخامسة والعشرين، وصل <span class="highlight-alhero">ألهيرو</span> و<span class="highlight-memo">ميمو</span> إلى القلعة وشعرا بعظمتها تحيط بهما.</p>
+                        <p>ولأول مرة منذ سنوات، رأى <span class="highlight-aya">آية</span> مرة أخرى.</p>
+
+                        <p>كانت لا تزال مثالية في عينيه، ولم تفارق أفكاره.</p>
+                        <ul class="list">
+                            <li>عيون سوداء لامعة</li>
+                            <li>شعر أسود طويل</li>
+                            <li>ضحكة ناعمة</li>
+                            <li>جسد صغير</li>
+                            <li>بشرة مشرقة</li>
+                        </ul>
+
+                        <p>بعد أن ألقى نظرة أخيرة عليها من بعيد، توجه إلى ساحة الاختبار.</p>
+                        <p>كانت هناك ثلاثة اختبارات:</p>
+
+                        <ul class="list">
+                            <li>اختبار القوة</li>
+                            <li>اختبار الرشاقة</li>
+                            <li>اختبار التصويب</li>
+                        </ul>
+
+                        <p>نجح <span class="highlight-alhero">ألهيرو</span> في جميع الاختبارات وأصبح فارسًا.</p>
+                        <p>لكنه لم يصبح فارسًا ملكيًا، بل أصبح فارس حراسة.</p>
+
+                        <p>أما <span class="highlight-memo">ميمو</span>، فقد أصبح فارسًا محاربًا وحقق حلمه.</p>
+                        <p>لكنه لم يترك <span class="highlight-alhero">ألهيرو</span>، وظل بجانبه دائمًا.</p>
+
+                        <p>لكن القدر كان يُخبئ لهما شيئًا داخل أسوار القلعة.</p>
+                    </section>
+
+                    <hr />
+
+                    <!-- الفصل 5 -->
+                    <section class="chapter" id="chapter-15">
+                        <h2><span class="chapter-number">الفصل 5</span> مظهر جديد</h2>
+
+                        <p>بعد أيام قليلة من الاختبار، حصل <span class="highlight-alhero">ألهيرو</span> على درعه الجديد.</p>
+                        <ul class="list">
+                            <li>بدلة رمادية</li>
+                            <li>خوذة سوداء</li>
+                            <li>عباءة حمراء</li>
+                            <li>لوحة اسم: ألهيرو</li>
+                        </ul>
+
+                        <p>شعر وكأنه شخص جديد.</p>
+                        <p>وتمنى أن يقربه كل ما يفعله من <span class="highlight-aya">آية</span> وأحلامه.</p>
+
+                        <p>ولأول مرة شعر <span class="highlight-alhero">ألهيرو</span> أنه يتحول إلى شخص آخر تمامًا.</p>
+                    </section>
+
+                    <hr />
+
+                    <!-- الفصل 6 -->
+                    <section class="chapter" id="chapter-16">
+                        <h2><span class="chapter-number">الفصل 6</span> المهمة الأولى</h2>
+
+                        <p>بعد حصوله على درعه، تدرب <span class="highlight-alhero">ألهيرو</span> لمدة شهر استعدادًا لمهمته الأولى.</p>
+                        <p>تم تكليفه بحماية بالدونز من هجمات قطاع الطرق.</p>
+
+                        <p>لم يرد الذهاب بدون <span class="highlight-memo">ميمو</span>، وتمت الموافقة على طلبه.</p>
+
+                        <p>كانت المهمة متوسطة الصعوبة، لكنهم تفاجؤوا بعدد الأعداء.</p>
+                        <p>أدركوا أنه لا يوجد مفر من القتال.</p>
+
+                        <p>بدأت المعركة وكانت صعبة جدًا.</p>
+                        <p>كان <span class="highlight-alhero">ألهيرو</span> يقاتل في اليمين و<span class="highlight-memo">ميمو</span> في اليسار.</p>
+
+                        <p>سقط بعض الفرسان، وبقي ثلاثة أعداء مدرعين.</p>
+
+                        <p>هزم <span class="highlight-alhero">ألهيرو</span> أحدهم بسهولة.</p>
+                        <p>وكان <span class="highlight-memo">ميمو</span> يقاتل آخر.</p>
+
+                        <p>حاول العدو الثالث مهاجمة <span class="highlight-memo">ميمو</span> من الخلف.</p>
+                        <p>لكن <span class="highlight-alhero">ألهيرو</span> لاحظ ذلك وأطلق سهمًا نحوه.</p>
+
+                        <p>أنقذ صديقه ثم هزمه، بينما هزم <span class="highlight-memo">ميمو</span> خصمه أيضًا.</p>
+                        <p>انتهت المعركة بالنصر، لكنها كانت مؤلمة بسبب الخسائر.</p>
+
+                        <p>في اليوم التالي، حصل الاثنان على ترقية.</p>
+                        <p>وأصبح <span class="highlight-alhero">ألهيرو</span> أقرب خطوة إلى <span class="highlight-aya">آية</span>.</p>
+
+                        <p>لكن هذا النصر كان مجرد بداية لشيء أكبر بكثير.</p>
+                    </section>
+
+                    <hr />
+
+                    <!-- الفصل 7 -->
+                    <section class="chapter" id="chapter-17">
+                        <h2><span class="chapter-number">الفصل 7</span> ابتسامة <span class="highlight-aya">آية</span>
+                        </h2>
+
+                        <p>بعد الترقية، سمع <span class="highlight-alhero">ألهيرو</span> أن الملك دعاه إلى حفل كبير.</p>
+                        <p>كان سعيدًا لأنه سيرى <span class="highlight-aya">آية</span> مرة أخرى وربما يتحدث معها.</p>
+
+                        <p>كان الحفل مليئًا بالناس، لكنه كان يبحث عنها فقط.</p>
+                        <p>وعندما وجدها، لم يستطع التحدث بسبب خجله.</p>
+
+                        <p>دخل في صراع بين قلبه وعقله.</p>
+                        <p>في النهاية، لم يتكلم.</p>
+
+                        <p>وفي نهاية الحفل، التقت أعينهما.</p>
+                        <p>ثم ابتسمت له <span class="highlight-aya">آية</span> ابتسامة جميلة.</p>
+
+                        <p>تلك الابتسامة أعادت له الحياة.</p>
+                        <p>وفي تلك اللحظة، تغير كل شيء داخل ألهيرو إلى الأبد.</p>
+                    </section>
+
+                    <hr />
+
+                    <!-- الفصل 8 -->
+                    <section class="chapter" id="chapter-18">
+                        <h2><span class="chapter-number">الفصل 8</span> <span class="highlight-alhero">ألهيرو</span> يتحدث مع نفسه</h2>
+
+                        <p>عاد إلى منزله، لكنه لم يستطع النوم.</p>
+                        <p>بدأ يلوم نفسه على ما حدث.</p>
+
+                        <p>تمنى لو كان أشجع وتحدث معها.</p>
+                        <p>لكن بقي لديه أمل.</p>
+
+                        <p>بعد ذلك، شعر بتحسن ونام.</p>
+                        <p>ووعد نفسه أن المرة القادمة ستكون مختلفة.</p>
+                    </section>
+
+                </div>
+            </main>
+        </div>
     </div>
     <script src="script.js"></script>
+
     <script>
-      document.addEventListener("DOMContentLoaded", function () {
-        const langEnBtn = document.getElementById("lang-en");
-        const langArBtn = document.getElementById("lang-ar");
-        const langEnDiv = document.querySelector(".lang-en");
-        const langArDiv = document.querySelector(".lang-ar");
-        const html = document.documentElement;
+        document.addEventListener("DOMContentLoaded", function() {
+            const langEnBtn = document.getElementById("lang-en");
+            const langArBtn = document.getElementById("lang-ar");
+            const langEnDiv = document.querySelector(".lang-en");
+            const langArDiv = document.querySelector(".lang-ar");
+            const html = document.documentElement;
 
-        function setLanguage(lang) {
-          if (lang === "ar") {
-            langEnDiv.classList.remove("active");
-            langArDiv.classList.add("active");
-            langArBtn.classList.add("active");
-            langEnBtn.classList.remove("active");
-            html.setAttribute("lang", "ar");
-            html.setAttribute("dir", "rtl");
-          } else {
-            langArDiv.classList.remove("active");
-            langEnDiv.classList.add("active");
-            langEnBtn.classList.add("active");
-            langArBtn.classList.remove("active");
-            html.setAttribute("lang", "en");
-            html.removeAttribute("dir");
-          }
-          // Re-run highlighting after language change
-          const activeWrapper =
-            document.querySelector(".lang-en.active .page-wrapper") ||
-            document.querySelector(".lang-ar.active .page-wrapper");
-          if (activeWrapper) {
-            highlightNames(activeWrapper);
-          }
-        }
+            function setLanguage(lang) {
+                if (lang === "ar") {
+                    langEnDiv.classList.remove("active");
+                    langArDiv.classList.add("active");
+                    langArBtn.classList.add("active");
+                    langEnBtn.classList.remove("active");
+                    html.setAttribute("lang", "ar");
+                    html.setAttribute("dir", "rtl");
+                } else {
+                    langArDiv.classList.remove("active");
+                    langEnDiv.classList.add("active");
+                    langEnBtn.classList.add("active");
+                    langArBtn.classList.remove("active");
+                    html.setAttribute("lang", "en");
+                    html.removeAttribute("dir");
+                }
+            }
 
-        langEnBtn.addEventListener("click", () => setLanguage("en"));
-        langArBtn.addEventListener("click", () => setLanguage("ar"));
+            langEnBtn.addEventListener("click", () => setLanguage("en"));
+            langArBtn.addEventListener("click", () => setLanguage("ar"));
 
-        // Initialize with English
-        setLanguage("en");
-      });
+            setLanguage("en");
+        });
     </script>
-  </body>
+
+</body>
+
 </html>
