@@ -82,15 +82,15 @@ document.addEventListener("DOMContentLoaded", function () {
         const lower = match.toLowerCase();
         if (lower.includes("memo")) {
           span.className = "highlight-memo";
-        }} } else if (
-  lower.includes("aya") ||
-  match.includes("اية") ||
-  match.includes("أية")
-) {
-  span.className = "highlight-aya";
-} else {
-  span.className = "highlight-alhero";
-    }
+        } else if (
+          lower.includes("aya") ||
+          match.includes("اية") ||
+          match.includes("أية")
+        ) {
+          span.className = "highlight-aya";
+        } else {
+          span.className = "highlight-alhero";
+        }
         span.textContent = match;
         frag.appendChild(span);
         lastIndex = offset + match.length;
